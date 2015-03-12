@@ -97,6 +97,10 @@ bootstrap() {
                         ncurses-dev automake libtool bison subversion libgdbm-dev pkg-config \
                         libffi-dev nodejs libqt4-dev libqtwebkit-dev
 
+                    if [ -z $(cat /etc/group | grep 'rvm') ]
+                    then
+                        sudo groupadd rvm
+                    fi
                     sudo usermod -a -G rvm ubuntu #add the ubuntu user to the rvm group
 
                     ;; # end Ubuntu
