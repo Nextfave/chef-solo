@@ -90,17 +90,7 @@ bootstrap() {
                     apt-get update -o Acquire::http::No-Cache=True
                     apt-get -o Dpkg::Options::="--force-confnew" --force-yes -fuy dist-upgrade
 
-                    # Install RVM as root (System-wide install)
-                    apt-get install -y build-essential openssl libreadline6 libreadline6-dev \
-                        curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 \
-                        libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev \
-                        ncurses-dev automake libtool bison subversion libgdbm-dev pkg-config \
-                        libffi-dev nodejs libqt4-dev libqtwebkit-dev
-
-                    if [ -z $(cat /etc/group | grep 'rvm') ]
-                    then
-                        sudo groupadd rvm
-                    fi
+                    grep -E "^rvm:" /etc/group > /dev/null || sudo groupadd rvm
                     sudo usermod -a -G rvm ubuntu #add the ubuntu user to the rvm group
 
                     ;; # end Ubuntu
@@ -174,6 +164,8 @@ bootstrap() {
 # ------------------------------------------------------------------
 install_rvm () {
     test $(installed) = 'yes' && { echo ">>>>>>>> RVM already installed "; return; }
+    curl -sSL https://rvm.io/mpapis.asc | sudo gpg --import -
+
     curl -L https://get.rvm.io | sudo bash -s stable --autolibs=enabled --auto-dotfiles
 }
 
