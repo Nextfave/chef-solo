@@ -90,7 +90,7 @@ bootstrap() {
                     apt-get update -o Acquire::http::No-Cache=True
                     apt-get -o Dpkg::Options::="--force-confnew" --force-yes -fuy dist-upgrade
 
-                    grep -E "^rvm:" /etc/group > /dev/null || sudo groupadd rvm
+                    getent group rvm > /dev/null || sudo groupadd rvm
                     sudo usermod -a -G rvm ubuntu #add the ubuntu user to the rvm group
 
                     ;; # end Ubuntu
