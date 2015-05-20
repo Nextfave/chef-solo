@@ -1,0 +1,128 @@
+SITE
+  remote: https://supermarket.getchef.com/api/v1
+  specs:
+    7-zip (1.0.2)
+      windows (>= 1.2.2)
+    apache2 (3.0.1)
+      iptables (>= 0.0.0)
+      logrotate (>= 0.0.0)
+    apt (2.7.0)
+    ark (0.9.0)
+      7-zip (>= 0.0.0)
+      windows (>= 0.0.0)
+    bluepill (2.3.1)
+      rsyslog (>= 0.0.0)
+    build-essential (2.2.3)
+    chef_gem (0.1.0)
+    chef_handler (1.1.6)
+    dmg (2.2.2)
+    elasticsearch (0.3.13)
+      ark (>= 0.2.4)
+    erlang (1.5.8)
+      apt (>= 1.7.0)
+      build-essential (>= 0.0.0)
+      yum (~> 3.0)
+      yum-epel (>= 0.0.0)
+      yum-erlang_solutions (>= 0.0.0)
+    forever (0.1.1)
+      npm (>= 0.0.0)
+    git (4.2.2)
+      build-essential (>= 0.0.0)
+      dmg (>= 0.0.0)
+      windows (>= 0.0.0)
+      yum-epel (>= 0.0.0)
+    homebrew (1.12.0)
+      build-essential (>= 2.1.2)
+    imagemagick (0.2.3)
+    install_from (3.0.4)
+    iptables (1.0.0)
+    java (1.31.0)
+    logrotate (1.9.1)
+    memcached (1.7.2)
+      runit (~> 1.0)
+      yum (~> 3.0)
+      yum-epel (>= 0.0.0)
+    metachef (3.0.4)
+    nginx (2.7.6)
+      apt (~> 2.2)
+      bluepill (~> 2.3)
+      build-essential (~> 2.0)
+      ohai (~> 2.0)
+      runit (~> 1.2)
+      yum-epel (~> 0.3)
+    nodejs (2.4.0)
+      apt (>= 0.0.0)
+      ark (>= 0.0.0)
+      build-essential (>= 0.0.0)
+      homebrew (>= 0.0.0)
+      yum-epel (>= 0.0.0)
+    npm (0.1.2)
+      nodejs (>= 0.0.0)
+    ohai (2.0.1)
+    packagecloud (0.0.17)
+    redis (3.0.4)
+      install_from (>= 0.0.0)
+      metachef (>= 0.0.0)
+      runit (>= 0.0.0)
+    rsyslog (1.15.0)
+    runit (1.6.0)
+      packagecloud (>= 0.0.0)
+    rvm (0.9.2)
+      chef_gem (>= 0.0.0)
+    unicorn (2.0.0)
+    windows (1.36.6)
+      chef_handler (>= 0.0.0)
+    wkhtmltopdf-update (0.4.0)
+      apt (>= 0.0.0)
+    yum (3.6.0)
+    yum-epel (0.6.0)
+      yum (~> 3.0)
+    yum-erlang_solutions (0.2.0)
+      yum (~> 3.0)
+
+GIT
+  remote: git@github.com:dmytro/github_keys.git
+  ref: master
+  sha: 65ac941221225c02d15c1910a71378f7b6769d24
+  specs:
+    github_keys (0.0.2)
+
+GIT
+  remote: git@github.com:msolovyov/munin-solo.git
+  ref: master
+  sha: 49d162e6d394eb825121afd79b995f74d90aaf74
+  specs:
+    munin (1.0.3)
+      apache2 (>= 1.0.6)
+      nginx (>= 0.0.0)
+
+GIT
+  remote: git@github.com:the-galley/chef-couchdb.git
+  ref: master
+  sha: c55e5dcc2348aa8d1b5b13a49dd25e86d2bcdf5d
+  specs:
+    couchdb (2.5.3)
+      ark (>= 0.0.0)
+      erlang (>= 0.0.0)
+      yum (~> 3.0)
+      yum-epel (>= 0.0.0)
+
+DEPENDENCIES
+  build-essential (>= 0)
+  couchdb (>= 0)
+  elasticsearch (>= 0)
+  erlang (>= 0)
+  forever (>= 0)
+  git (>= 0)
+  github_keys (~> 0.0.2)
+  imagemagick (>= 0)
+  java (>= 0)
+  memcached (>= 0)
+  munin (>= 0)
+  nginx (>= 0)
+  nodejs (>= 0)
+  redis (>= 0)
+  rvm (>= 0)
+  unicorn (>= 0)
+  wkhtmltopdf-update (>= 0)
+
